@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <title>EditUser</title>
+</head>
+
+<body>
+    <h1>Edit User</h1>
+    <form action="/editUser" method="POST">
+
+        <input type="hidden" id="_id" name="_id" value="<%= data._id %>">
+        <label for="fname">First Name</label>
+        <input type="text" name="fname" value="<%= data.fname %>" id="fname">
+        <br />
+        <label for="lname">Last Name</label>
+        <input type="text" name="lname" value="<%= data.lname %>" id="fname">
+        <br />
+        <label for="city">city</label>
+        <input type="text" name="city" value="<%= data.city %>" id="city">
+        <br />
+        <label for="state">State</label>
+        <input type="text" name="state" value="<%= data.state %>" id="state">
+        <br />
+        <label for="country">Country</label>
+        <input type="text" name="country" value="<%= data.country %>" id="country">
+        <br />
+        <button type="submit" class="btn btn-primary">Update</button>
+        <br />
+
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DataTables example - jQuery UI ThemeRoller</title>
+  <link rel="shortcut icon" type="image/png" href="/media/images/favicon.png">
+  <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://www.datatables.net/rss.xml">
+  <link rel="stylesheet" type="text/css" href="/media/css/site-examples.css?_=e05f4cd9972d1e8bde5217487a96b110">
+  <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/dataTables.jqueryui.min.css">
+  <style type="text/css" class="init">
+
+  </style>
+  <script type="text/javascript" src="/media/js/site.js?_=9c329a95ceb15fe0222d8af90260bddf">
+  </script>
+  <script type="text/javascript" src="/media/js/dynamic.php?comments-page=examples%2Fstyling%2FjqueryUI.html" async>
+  </script>
+  <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
+  </script>
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js">
+    </script>
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/1.10.12/js/dataTables.jqueryui.min.js">
+    </script>
+  <script type="text/javascript" language="javascript" src="../resources/demo.js">
+  </script>
+  <script type="text/javascript" class="init">
+
+    $(document).ready(function () {
+      $('#example').DataTable();
+    });
+
+  </script>
+</head>
+
+<body class="wide comments example dt-example-jqueryui">
+
+  <table id="example" class="display" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Email</td>
+        <td>State</td>
+        <td>City</td>
+        <td>Coutry</td>
+        <td>Action</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% for( let i = 0; i < userData.length; i++ ) { %>
+      <tr>
+        <td><%= userData[i].fname %> </td>
+        <td><%= userData[i].lname %> </td>
+        <td><%= userData[i].email %> </td>
+        <td><%= userData[i].state %> </td>
+        <td><%= userData[i].city %> </td>
+        <td><%= userData[i].country %> </td>
+        <td><a href="/editUser/<%= userData[i]._id %>">Edit User</a>/
+          <a href="/deleteUser/<%= userData[i]._id %>">Delete User</a></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+
+</body>
+
+</html>
